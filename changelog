@@ -1,3 +1,9 @@
+pcapfix (1.1.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Tiago Ilieve <tiago.myhro@gmail.com>  Mon, 11 May 2015 00:29:24 -0300
+
 pcapfix (1.0.2-1) unstable; urgency=low
 
   * Initial release (Closes: #nnnn)
