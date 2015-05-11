@@ -1,15 +1,29 @@
 Source: pcapfix
-Section: unknown
+Section: net
 Priority: optional
 Maintainer: Tiago Ilieve <tiago.myhro@gmail.com>
 Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.5
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://anonscm.debian.org/collab-maint/pcapfix.git
-#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/pcapfix.git;a=summary
+Standards-Version: 3.9.6
+Homepage: https://f00l.de/pcapfix/
+Vcs-Git: https://github.com/myhro/deb-pcapfix.git
+Vcs-Browser: https://github.com/myhro/deb-pcapfix
 
 Package: pcapfix
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: repair your broken pcap and pcapng files
+ To fix pcap files the tool first checks for an intact pcap global header and
+ repairs it if there are some corrupted bytes. It there seems to be no global
+ header at all, pcapfix adds a self-created one at the beginning of the file.
+ In a second step the tool tries to find pcap packet headers inside the file,
+ below the global header. It checks if the values are correct (or seem to be
+ correct) and tries to repair a packet if there is something wrong.
+ .
+ To fix pcapng files the tool loops through all packet headers that can be
+ found in the file. It checks for mandatory Section Header and Interface
+ Description Block and creates them if missing. Pcapfix checks for correct
+ block sizes and valid option fields. If something is wrong, invalid fields are
+ repaired (if possible) or skipped and adjusted to finally get a proper pcapng
+ file.
+ .
+ This package is useful to fix broken dumps created by tcdump or wireshark.
