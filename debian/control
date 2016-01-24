@@ -5,8 +5,8 @@ Maintainer: Tiago Ilieve <tiago.myhro@gmail.com>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 Homepage: https://f00l.de/pcapfix/
-Vcs-Git: https://github.com/myhro/pcapfix.git
-Vcs-Browser: https://github.com/myhro/pcapfix
+Vcs-Git: https://github.com/myhro/deb-pcapfix.git
+Vcs-Browser: https://github.com/myhro/deb-pcapfix
 
 Package: pcapfix
 Architecture: any
